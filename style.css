@@ -1,0 +1,8 @@
+/*img {*/
+/*    object-fit: cover;*/
+/*}*/
+
+.img_wrap {
+    height: 200px;
+    overflow: hidden;
+}
