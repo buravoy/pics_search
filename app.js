@@ -43,11 +43,6 @@ new Vue({
             this.fetchPhotos();
         },
 
-        chnangePaginaton() {
-            this.photos = [];
-            this.fetchPhotos();
-        },
-
         pageChange(page) {
             this.params.page = page;
             this.photos = [];
