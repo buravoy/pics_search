@@ -7,7 +7,7 @@ Vue.component('pagination', {
         <ul class="d-inline-flex list-unstyled m-0">
           <li v-if="hasFirst()"><button @click.prevent="changePage(1)" class="btn btn-outline-success">1</button></li>
           <li v-if="hasFirst()">...</li>
-          <li v-for="page in pages"><button @click.prevent="changePage(page)" :class="[current == page ? 'btn-success' : 'btn-outline-success']" class="btn">{{ page }}</button></li>
+          <li v-for="page in pages"><button @click.prevent="changePage(page)" :class="pageClass(page)" class="btn">{{ page }}</button></li>
           <li v-if="hasLast()">...</li>
           <li v-if="hasLast()"><button href="#" @click.prevent="changePage(totalPages)" class="btn btn-outline-success">{{ totalPages }}</button></li>
         </ul>
@@ -37,49 +37,66 @@ Vue.component('pagination', {
 
   computed: {
     pages: function() {
-      var pages = []
+      const pages = []
 
-      for(var i = this.rangeStart; i <= this.rangeEnd; i++) {
+      for(let i = this.rangeStart; i <= this.rangeEnd; i++) {
         pages.push(i)
       }
 
       return pages
     },
+
     rangeStart: function() {
-      var start = this.current - this.pageRange
+      const start = this.current - this.pageRange
 
       return (start > 0) ? start : 1
     },
+
     rangeEnd: function() {
-      var end = this.current + this.pageRange
+      const end = this.current + this.pageRange
 
       return (end < this.totalPages) ? end : this.totalPages
     },
+
     totalPages: function() {
       return Math.ceil(this.total/this.perPage)
     },
+
     nextPage: function() {
       return this.current + 1
     },
+
     prevPage: function() {
       return this.current - 1
     }
   },
+
   methods: {
     hasFirst: function() {
       return this.rangeStart !== 1
     },
+
     hasLast: function() {
       return this.rangeEnd < this.totalPages
     },
+
     hasPrev: function() {
       return this.current > 1
     },
+
     hasNext: function() {
       return this.current < this.totalPages
     },
+
     changePage(page) {
       this.$emit('page-changed', page)
+    },
+
+    pageClass(page) {
+      console.log(page)
+      if (page === this.current) return 'btn-success';
+      return 'btn-outline-success';
     }
+
   }
 })

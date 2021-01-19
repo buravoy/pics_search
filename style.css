@@ -1,8 +1,41 @@
-/*img {*/
-/*    object-fit: cover;*/
-/*}*/
-
 .img_wrap {
     height: 200px;
     overflow: hidden;
+}
+
+.author {
+    background-color: #fff;
+    z-index: 1;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.bg-img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(10px);
+}
+
+.bg-img img {
+    height: 100%;
+}
+
+.img-hover-target {
+    transition: 3s;
+}
+
+.img-hover {
+    max-height: 300px;
+}
+
+.img-hover:hover .img-hover-target {
+    transform: scale(1.5);
 }
