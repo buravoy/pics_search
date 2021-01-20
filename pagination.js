@@ -1,18 +1,18 @@
 Vue.component('pagination', {
   template: `
-    <div class="row px-2 d-flex justify-content-center">
+    <div class="row px-2 d-flex justify-content-center mt-3">
      
-        <button v-if="hasPrev()" @click.prevent="changePage(prevPage)" class="btn btn-sm btn-outline-primary"><</button>
+        <button v-if="hasPrev()" @click.prevent="changePage(prevPage)" class="btn btn-sm btn-outline-primary mr-1"><</button>
         
         <ul class="d-inline-flex list-unstyled m-0">
-          <li v-if="hasFirst()"><button @click.prevent="changePage(1)" class="btn btn-sm btn-outline-primary">1</button></li>
+          <li v-if="hasFirst()"><button @click.prevent="changePage(1)" class="btn btn-sm btn-outline-primary mr-1">1</button></li>
           <li v-if="hasFirst()">...</li>
-          <li v-for="page in pages"><button @click.prevent="changePage(page)" :class="pageClass(page)" class="btn btn-sm">{{ page }}</button></li>
+          <li v-for="page in pages"><button @click.prevent="changePage(page)" :class="pageClass(page)" class="btn btn-sm mx-1">{{ page }}</button></li>
           <li v-if="hasLast()">...</li>
-          <li v-if="hasLast()"><button href="#" @click.prevent="changePage(totalPages)" class="btn btn-sm btn-outline-primary">{{ totalPages }}</button></li>
+          <li v-if="hasLast()"><button href="#" @click.prevent="changePage(totalPages)" class="btn btn-sm btn-outline-primary ml-1">{{ totalPages }}</button></li>
         </ul>
 
-        <button v-if="hasNext()" @click.prevent="changePage(nextPage)" class="btn btn-sm btn-outline-primary">></button>
+        <button v-if="hasNext()" @click.prevent="changePage(nextPage)" class="btn btn-sm btn-outline-primary ml-1">></button>
 
     </div>
   `,

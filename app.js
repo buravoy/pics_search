@@ -65,8 +65,6 @@ new Vue({
                     return response.json()
                 })
                 .then((data) => {
-                    console.log(data);
-
                     if (data.constructor.name === 'Object') {
                         this.photos = this.photos.concat(data.results);
                     } else {
