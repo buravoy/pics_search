@@ -39,3 +39,7 @@
 .img-hover:hover .img-hover-target {
     transform: scale(1.5);
 }
+
+.results {
+    min-height: 200px;
+}

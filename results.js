@@ -1,6 +1,6 @@
 Vue.component('results', {
     template: `
-                <div class="row px-2">
+                <div class="row px-2 results mb-3">
                     <div v-for="photo in photos" class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 p-2">
                         <div  class="shadow rounded overflow-hidden h-100 d-flex flex-column justify-content-between">
                             <div class="h-100 d-flex align-items-center justify-content-center position-relative img-hover">

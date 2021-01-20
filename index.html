@@ -13,6 +13,7 @@
 <body>
 <div class="container">
     <div id="app">
+        <h1>Поиск фотографий на unsplash.com</h1>
 
         <div class="form-inline">
             <div class="input-group col-xl-6 p-0">
@@ -49,7 +50,9 @@
                 @page-changed="pageChange">
         </pagination>
 
-        <button @click="addPhotos">Еще</button>
+        <div class="w-100 my-3">
+            <button @click="addPhotos" class="btn btn-primary m-auto d-block">Загрузить еще...</button>
+        </div>
     </div>
 </div>
 
